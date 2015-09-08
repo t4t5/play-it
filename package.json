@@ -1,0 +1,23 @@
+{
+  "name": "play-it",
+  "version": "1.0.0",
+  "description": "Use your phone as a controller!",
+  "main": "index.js",
+  "dependencies": {
+    "express.io": "^1.1.13"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/t4t5/play-it.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/t4t5/play-it/issues"
+  },
+  "homepage": "https://github.com/t4t5/play-it#readme"
+}
