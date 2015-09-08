@@ -1,8 +1,13 @@
-app = require('express.io')()
+var express = require('express.io');
+var app = express();
 app.http().io()
  
 //build your realtime-web app 
 console.log("I'm working!");
+
+
+app.use(express.static(__dirname + '/public'));
+
 
 app.set('view engine', 'jade');
 
