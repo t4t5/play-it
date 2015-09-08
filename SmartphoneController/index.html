@@ -1,0 +1,23 @@
+<script>
+
+    if(window.DeviceMotionEvent){
+        window.addEventListener("devicemotion", motion, false);
+    }else{
+        document.querySelector("#y-value").innerHTML = "DeviceMotionEvent is not supported";
+    }
+
+    function motion(event){
+
+        var yValue = event.accelerationIncludingGravity.y;
+
+        yValue = (10+yValue).toFixed(4);
+
+        document.querySelector("#y-value").innerHTML  = yValue;
+    }
+
+</script>
+
+<body>
+<h1 id="y-value"></h1>
+</body>
+
