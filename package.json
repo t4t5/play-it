@@ -4,7 +4,8 @@
   "description": "Use your phone as a controller!",
   "main": "index.js",
   "dependencies": {
-    "express.io": "^1.1.13"
+    "express.io": "^1.1.13",
+    "jade": "^1.11.0"
   },
   "devDependencies": {},
   "scripts": {
