@@ -1,23 +1,50 @@
+<script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
+
 <script>
+    var yValue = 0;
+
+//    var c1 = 0.1, c2=0.1;
+//    var yValue = 0, ySpeed = 0;
+
+    var socket = io.connect('http://localhost:3000');
+    socket.on('ready', function (data) {
+        socket.emit('yValue', {value: yValue});
+    });
 
     if(window.DeviceMotionEvent){
         window.addEventListener("devicemotion", motion, false);
-    }else{
+    }else {
         document.querySelector("#y-value").innerHTML = "DeviceMotionEvent is not supported";
     }
 
+
     function motion(event){
+//        var yAcc = (event.acceleration.y).toFixed(4);
+//        ySpeed += c1*yAcc;
+//        yValue += c2*ySpeed;
+        
+//        document.querySelector("#y-value").innerHTML  = "yValue: " + yValue;
+//        document.querySelector("#y-speed").innerHTML  = "ySpeed: " + ySpeed;
+//        document.querySelector("#y-acc").innerHTML  = "yAcc: " + yAcc;
 
-        var yValue = event.accelerationIncludingGravity.y;
-
-        yValue = (10+yValue).toFixed(4);
-
-        document.querySelector("#y-value").innerHTML  = yValue;
+        yValue = event.accelerationIncludingGravity.y;
+        document.querySelector("#angle").innerHTML  = "angle: " + yValue;
+        //document.querySelector("#angle").innerHTML  = "angle: " + JSON.stringify(event.accelerationIncludingGravity);
     }
 
-</script>
 
+</script>
+<style>
+    h1{
+        font-style: 40px;
+    }
+</style>
 <body>
+<h1 id="y-acc"></h1>
+<h1 id="y-speed"></h1>
 <h1 id="y-value"></h1>
+
+
+<h1 id="angle"></h1>
 </body>
 
